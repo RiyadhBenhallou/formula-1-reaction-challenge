@@ -25,11 +25,12 @@ const startGame = () => {
 };
 
 const jumpStart = () => {
-    clearTimeout(startTimeout);
+     if (startTimeout) {
+        clearTimeout(startTimeout);
+    }
     redLight.style.display = 'block';
     orangeLight.style.display = 'none';
     score.innerHTML = 'Restart!';
-    
 };
 
 
