@@ -40,17 +40,10 @@ const stopGame = () => {
     const result = (endTime - startTime) / 1000
     score.innerHTML = result + ' Seconds'
 
-    if (bestTime) {
-        if (result < bestTime) {
-            bestTime = result
-            bestScore.innerHTML = 'Your best score is: ' + bestTime + ' Seconds' 
-        } else {
-            bestScore.innerHTML = 'Your best score is: ' + bestTime + ' Seconds'
-        }
-    } else {
-        bestTime = result
-        bestScore.innerHTML = 'Your best score is: ' + result + ' Seconds'
+    if (!bestTime || result < bestTime) {
+        bestTime = result;
     }
+    bestScore.innerHTML = 'Your best score is: ' + bestTime + ' Seconds';
     
 
 }
