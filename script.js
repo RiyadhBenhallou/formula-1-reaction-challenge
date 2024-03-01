@@ -40,7 +40,7 @@ const stopGame = () => {
         }
     } else {
         bestTime = result
-        bestScore.innerHTML = 'Your best score is: ' + result + ' Seconds'
+        bestScore.innerHTML = 'Your best score is: ' + bestTime + ' Seconds'
     }
     
 
