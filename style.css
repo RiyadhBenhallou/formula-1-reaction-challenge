@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.red-light {
+    background-color: rgb(228, 18, 18);
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 180px;
+}
+
+.green-light {
+    background-color: green;
+    display: none;
+    width: 150px;
+    height: 150px;
+    border-radius: 180px;
+}
+
+.orange-light {
+    background-color: orange;
+    display: none;
+    width: 150px;
+    height: 150px;
+    border-radius: 180px;
+}
+
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
