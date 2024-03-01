@@ -35,7 +35,8 @@ const stopGame = () => {
 
     if (bestTime) {
         if (result < bestTime) {
-            bestScore.innerHTML = 'Your best score is: ' + result + ' Seconds' 
+            bestTime = result
+            bestScore.innerHTML = 'Your best score is: ' + bestTime + ' Seconds' 
         }
     } else {
         bestTime = result
