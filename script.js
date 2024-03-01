@@ -8,23 +8,30 @@ let endTime
 let startTime
 let bestTime
 
+let startTimeout;
+
 const startGame = () => {
-    if (score.innerHTML != 'Click to start!' || score.innerHTML == 'Click to start!') {
-        score.innerHTML = 'Focus!'
-    }
+    score.innerHTML = 'Focus!';
+    redLight.style.display = 'none';
+    orangeLight.style.display = 'block';
 
-    redLight.style.display = 'none'
-    orangeLight.style.display = 'block'
-    const delay = 2000 + 1000 * Math.floor(Math.random() * 4)
+    const delay = 2000 + 1000 * Math.floor(Math.random() * 4);
 
-    setTimeout(() => {
-        orangeLight.style.display = 'none'
-        greenLight.style.display = 'block'
-        startTime = new Date();
-    }, delay)
+    startTimeout = setTimeout(() => {
+            orangeLight.style.display = 'none';
+            greenLight.style.display = 'block';
+            startTime = new Date();
+    }, delay);
+};
 
+const jumpStart = () => {
+    clearTimeout(startTimeout);
+    redLight.style.display = 'block';
+    orangeLight.style.display = 'none';
+    score.innerHTML = 'Restart!';
+    
+};
 
-}
 
 const stopGame = () => {
     redLight.style.display = 'block'
@@ -35,14 +42,11 @@ const stopGame = () => {
 
     if (bestTime) {
         if (result < bestTime) {
-            bestTime = result
-            bestScore.innerHTML = 'Your best score is: ' + bestTime + ' Seconds' 
-        } else {
-            bestScore.innerHTML = 'Your best score is: ' + bestTime + ' Seconds'
+            bestScore.innerHTML = 'Your best score is: ' + result + ' Seconds' 
         }
     } else {
         bestTime = result
-        bestScore.innerHTML = 'Your best score is: ' + bestTime + ' Seconds'
+        bestScore.innerHTML = 'Your best score is: ' + result + ' Seconds'
     }
     
 
